@@ -6,8 +6,16 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}'
   ],
+
   theme: {
-    extend: {}
+    extend: {
+      colors: {
+        fbprimary: '#0d0b22'
+      },
+      textColor: {
+        white: '#ffffff'
+      }
+    }
   },
   plugins: []
 }
