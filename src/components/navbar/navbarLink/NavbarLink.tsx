@@ -9,8 +9,8 @@ export default function NavbarLink({ item }: { item: NavLink }) {
   return (
     <Link
       href={item.path}
-      className={clsx('font-medium px-3 py-1  hover:text-blue-600 ', {
-        'rounded-xl  bg-white text-blue-600': pathName === item.path
+      className={clsx('font-medium px-3 py-1  hover:text-orange-500 ', {
+        'rounded-xl  bg-white text-blue-900': pathName === item.path
       })}
     >
       {item.title}

@@ -18,10 +18,12 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang='es'>
-      <body className={`${inter.className} h-lvh bg-blue-950 text-white `}>
+    <html lang="es">
+      <body
+        className={`${inter.className} flex flex-col min-h-screen bg-fbprimary text-white`}
+      >
         <Header />
-        {children}
+        <main className="flex-1">{children}</main>
         <Footer />
       </body>
     </html>

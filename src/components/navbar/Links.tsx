@@ -14,14 +14,17 @@ export const Links = () => {
   const isAdmin = true
 
   return (
-    <div className='flex gap-5 text-sm text-white '>
+    <div className="flex gap-5 text-sm text-white ">
       {links.map((link) => (
         <NavbarLink key={link.title} item={link} />
       ))}
       {session ? (
         <>
           {isAdmin && <NavbarLink item={{ title: 'Admin', path: '/admin' }} />}
-          <button type='button' className='px-3 py-1 bg-white text-blue-600'>
+          <button
+            type="button"
+            className="px-3 py-1 text-white bg-blue-700 hover:text-blue-800 hover:bg-white"
+          >
             Logout
           </button>
         </>
