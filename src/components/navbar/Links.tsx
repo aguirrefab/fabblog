@@ -1,6 +1,6 @@
-import React from 'react'
-import NavbarLink from './navbarLink/NavbarLink'
-import { NavLink } from '@/interfaces/NavLink'
+import React from 'react';
+import NavbarLink from './NavbarLink/NavbarLink';
+import { NavLink } from '@/interfaces/NavLink';
 
 export const Links = () => {
   const links: NavLink[] = [
@@ -8,13 +8,13 @@ export const Links = () => {
     { title: 'About', path: '/about' },
     { title: 'Contact', path: '/contact' },
     { title: 'Blog', path: '/blog' }
-  ]
+  ];
 
-  const session = true
-  const isAdmin = true
+  const session = true;
+  const isAdmin = true;
 
   return (
-    <div className="flex gap-5 text-sm text-white ">
+    <div className='flex gap-5 text-sm text-white '>
       {links.map((link) => (
         <NavbarLink key={link.title} item={link} />
       ))}
@@ -22,8 +22,8 @@ export const Links = () => {
         <>
           {isAdmin && <NavbarLink item={{ title: 'Admin', path: '/admin' }} />}
           <button
-            type="button"
-            className="px-3 py-1 text-white bg-blue-700 hover:text-blue-800 hover:bg-white"
+            type='button'
+            className='px-3 py-1 text-white bg-blue-700 hover:text-blue-800 hover:bg-white'
           >
             Logout
           </button>
@@ -32,5 +32,5 @@ export const Links = () => {
         <NavbarLink item={{ title: 'Login', path: '/login' }} />
       )}
     </div>
-  )
-}
+  );
+};

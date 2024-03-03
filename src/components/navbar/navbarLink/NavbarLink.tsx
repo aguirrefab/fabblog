@@ -1,11 +1,11 @@
-'use client'
-import Link from 'next/link'
-import { NavLink } from '@/interfaces/NavLink'
-import { usePathname } from 'next/navigation'
-import clsx from 'clsx'
+'use client';
+import Link from 'next/link';
+import { NavLink } from '@/interfaces/NavLink';
+import { usePathname } from 'next/navigation';
+import clsx from 'clsx';
 
 export default function NavbarLink({ item }: { item: NavLink }) {
-  const pathName = usePathname()
+  const pathName = usePathname();
   return (
     <Link
       href={item.path}
@@ -15,5 +15,5 @@ export default function NavbarLink({ item }: { item: NavLink }) {
     >
       {item.title}
     </Link>
-  )
+  );
 }

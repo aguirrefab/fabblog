@@ -1,27 +1,26 @@
-import type { Metadata } from 'next'
-import { Header } from '@/components/header/Header'
-import { Footer } from '@/components/footer/Footer'
-import './globals.css'
-
-import { Inter as FontSans } from 'next/font/google'
-import { cn } from '@/lib/utils'
-import { ThemeProvider } from '@/components/theme.provider'
+import type { Metadata } from 'next';
+import { Header } from '@/components/header/Header';
+import { Footer } from '@/components/footer/Footer';
+import { Inter as FontSans } from 'next/font/google';
+import { cn } from '@/lib/utils';
+import './globals.css';
+import { ThemeProvider } from '@/components/theme.provider';
 
 export const metadata: Metadata = {
   title: 'Fabblog | All about technology',
   description:
     'A simple blog app to share news and updates about the world of technology'
-}
+};
 
 export const fontSans = FontSans({
   subsets: ['latin'],
   variable: '--font-sans'
-})
+});
 
 export default function RootLayout({
   children
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang='es' suppressHydrationWarning>
@@ -43,5 +42,5 @@ export default function RootLayout({
         <Footer />
       </body>
     </html>
-  )
+  );
 }

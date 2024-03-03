@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from 'next/image';
 
 export default function AboutPage() {
   return (
@@ -37,5 +37,5 @@ export default function AboutPage() {
         />
       </section>
     </div>
-  )
+  );
 }
