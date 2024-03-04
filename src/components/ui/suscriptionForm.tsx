@@ -1,20 +1,20 @@
-import { zodResolver } from '@hookform/resolvers/zod';
-import React from 'react';
-import { useForm } from 'react-hook-form';
-import { z } from 'zod';
+import { zodResolver } from "@hookform/resolvers/zod";
+import React from "react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+
+import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
   FormField,
   FormItem,
   FormLabel
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
 
 const formSchema = z
   .object({
-    // Define your form fields and their validation rules using Zod schema
     firstName: z.string().nonempty(),
     lastName: z.string().nonempty(),
     email: z.string().email().nonempty(),
@@ -26,8 +26,8 @@ const formSchema = z
       return data.password === data.passwordConfirm;
     },
     {
-      message: 'Passwords do not match',
-      path: ['passwordConfirm']
+      message: "Passwords do not match",
+      path: ["passwordConfirm"]
     }
   );
 
@@ -37,42 +37,39 @@ export const SuscriptionForm = () => {
   });
 
   const handleSubmit = (data) => {
-    console.log(data); // Handle form submission here
+    console.log(data);
   };
+
   return (
     <Form {...form}>
       <form
+        className="max-w-md w-full flex flex-col gap-4"
         onSubmit={form.handleSubmit(handleSubmit)}
-        className='max-w-md w-full flex flex-col gap-4'
       >
         <FormField
           control={form.control}
-          name='email'
+          name="email"
           render={({ field }) => {
             return (
               <FormItem>
                 <FormLabel>Email address</FormLabel>
                 <FormControl>
-                  <Input
-                    placeholder='Email address'
-                    type='email'
-                    {...field}
-                  ></Input>
+                  <Input placeholder="Email address" type="email" {...field} />
                 </FormControl>
               </FormItem>
             );
           }}
         />
-        <div className='flex flex-1 gap-4'>
+        <div className="flex flex-1 gap-4">
           <FormField
             control={form.control}
-            name='firstName'
+            name="firstName"
             render={({ field }) => {
               return (
                 <FormItem>
                   <FormLabel>Name</FormLabel>
                   <FormControl>
-                    <Input placeholder='Name' type='string' {...field}></Input>
+                    <Input placeholder="Name" type="string" {...field} />
                   </FormControl>
                 </FormItem>
               );
@@ -80,17 +77,13 @@ export const SuscriptionForm = () => {
           />
           <FormField
             control={form.control}
-            name='lastName'
+            name="lastName"
             render={({ field }) => {
               return (
                 <FormItem>
                   <FormLabel>Last Name</FormLabel>
                   <FormControl>
-                    <Input
-                      placeholder='Last name'
-                      type='string'
-                      {...field}
-                    ></Input>
+                    <Input placeholder="Last name" type="string" {...field} />
                   </FormControl>
                 </FormItem>
               );
@@ -98,20 +91,16 @@ export const SuscriptionForm = () => {
           />
         </div>
 
-        <div className='flex flex-1 gap-4'>
+        <div className="flex flex-1 gap-4">
           <FormField
             control={form.control}
-            name='password'
+            name="password"
             render={({ field }) => {
               return (
                 <FormItem>
                   <FormLabel>Password</FormLabel>
                   <FormControl>
-                    <Input
-                      placeholder='Password'
-                      type='password'
-                      {...field}
-                    ></Input>
+                    <Input placeholder="Password" type="password" {...field} />
                   </FormControl>
                 </FormItem>
               );
@@ -119,17 +108,17 @@ export const SuscriptionForm = () => {
           />
           <FormField
             control={form.control}
-            name='passwordConfirm'
+            name="passwordConfirm"
             render={({ field }) => {
               return (
                 <FormItem>
                   <FormLabel>Password Confirm</FormLabel>
                   <FormControl>
                     <Input
-                      placeholder='Password Confirm'
-                      type='password'
+                      placeholder="Password Confirm"
+                      type="password"
                       {...field}
-                    ></Input>
+                    />
                   </FormControl>
                 </FormItem>
               );
@@ -137,7 +126,7 @@ export const SuscriptionForm = () => {
           />
         </div>
 
-        <Button type='submit'>Enviar</Button>
+        <Button type="submit">Enviar</Button>
       </form>
     </Form>
   );
